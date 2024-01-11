@@ -1,0 +1,15 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import FormInput from "./Form";
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" index element={<FormInput />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
