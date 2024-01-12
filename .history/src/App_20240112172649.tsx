@@ -32,7 +32,7 @@ class App extends Component<IProps, IState> {
       <Router>
         <Routes>
           <Route path="/" element={<FormInput />} />
-          <Route path="/details/:id" element={<BasicTable />} />
+          <Route path="/details:id" element={<BasicTable />} />
         </Routes>
       </Router>
     );

@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, Component } from "react";
 import bg from "./assets/bg2.jpg";
 import { Link } from "react-router-dom";
-import { unstable_HistoryRouter } from "react-router-dom";
+import 
 
 interface FormInputState {
   id: string;
@@ -24,7 +24,6 @@ class FormInput extends Component<{}, FormInputState> {
 
   fetchData = async (str: String) => {
     const { id, loading } = this.state;
-    let history = unstable_HistoryRouter;
 
     if (!loading) {
       // const history : any = this.props;
@@ -42,7 +41,7 @@ class FormInput extends Component<{}, FormInputState> {
           this.setState({ asteroidDetails: data });
           console.log(data);
           // this.navigate("/details", { state: data });
-          
+          <Link to = {{pathname: "/details", state: {data : data}}} />
         } catch (error) {
           console.error("Error fetching asteroid data:", error);
           alert("Error fetching asteroid data! Please recheck the input ID");

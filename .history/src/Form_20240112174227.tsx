@@ -1,7 +1,6 @@
 import React, { ChangeEvent, FormEvent, Component } from "react";
 import bg from "./assets/bg2.jpg";
 import { Link } from "react-router-dom";
-import { unstable_HistoryRouter } from "react-router-dom";
 
 interface FormInputState {
   id: string;
@@ -24,7 +23,6 @@ class FormInput extends Component<{}, FormInputState> {
 
   fetchData = async (str: String) => {
     const { id, loading } = this.state;
-    let history = unstable_HistoryRouter;
 
     if (!loading) {
       // const history : any = this.props;

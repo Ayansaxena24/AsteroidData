@@ -24,7 +24,7 @@ class FormInput extends Component<{}, FormInputState> {
 
   fetchData = async (str: String) => {
     const { id, loading } = this.state;
-    let history = unstable_HistoryRouter;
+    let histo
 
     if (!loading) {
       // const history : any = this.props;
@@ -42,7 +42,7 @@ class FormInput extends Component<{}, FormInputState> {
           this.setState({ asteroidDetails: data });
           console.log(data);
           // this.navigate("/details", { state: data });
-          
+          <Link to = {{pathname: "/details", state: {data : data}}} />
         } catch (error) {
           console.error("Error fetching asteroid data:", error);
           alert("Error fetching asteroid data! Please recheck the input ID");

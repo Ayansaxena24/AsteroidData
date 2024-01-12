@@ -42,7 +42,9 @@ class FormInput extends Component<{}, FormInputState> {
           this.setState({ asteroidDetails: data });
           console.log(data);
           // this.navigate("/details", { state: data });
-          
+          history.push({
+            pathname : "/details/" ,
+            state: data }});
         } catch (error) {
           console.error("Error fetching asteroid data:", error);
           alert("Error fetching asteroid data! Please recheck the input ID");
