@@ -1,0 +1,46 @@
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import FormInput from './Form';
+import BasicTable from './Table';
+import use
+
+interface IProps {
+ navigate: () => void;
+}
+
+interface IState {
+ navigateAfter: number;
+}
+
+class App extends Component<IProps, IState> {
+ constructor(props: IProps) {
+    super(props);
+    this.state = {
+      navigateAfter: 5000,
+    };
+ }
+
+ componentDidMount() {
+    setTimeout(() => {
+      this.props.navigate();
+    }, this.state.navigateAfter);
+ }
+
+ render() {
+    return (
+      <Router>
+        <Routes>
+          <Route path="/" element={<FormInput />} />
+          <Route path="/details" element={<BasicTable />} />
+        </Routes>
+      </Router>
+    );
+ }
+}
+
+export function APPWithRouter(props: IProps) {
+ const navigate = useNavigate();
+ return <App navigate={navigate} />;
+}
+
+export default App;
