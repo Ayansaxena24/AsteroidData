@@ -31,7 +31,11 @@ class App extends Component<IProps, IState> {
     return (
       <Router>
         <Routes>
-          <Route path="/" element={<FormInput className="bg-cover overflow-clip bg-center"/>} />
+          <Route path="/" class name {
+            constructor(parameters) {
+              
+            }
+          } element={<FormInput />} />
           <Route path="/details" element={<BasicTable />} />
         </Routes>
       </Router>

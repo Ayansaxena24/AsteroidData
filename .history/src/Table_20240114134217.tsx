@@ -116,7 +116,7 @@ const BasicTable: FC = () => {
       <div className="z-10 absolute top-6">
         <p className="font-bold text-4xl z-10">AsteroidOpedia</p>
       </div>
-      <img src={bg} alt="bg" className="z-0 absolute top-0 right-0 w-full h-[148vh] sm:h-[125vh] md:h-[130vh] lg:h-[124vh] bg-center-bottom bg-no-repeat bg-cover" />
+      <img src={bg} alt="bg" className="z-0 absolute top-0 right-0 w-full h-[148vh] sm:h-[120vh] md:h-[130vh] lg-[120vh] bg-center-bottom bg-no-repeat bg-cover" />
 
       <div className="mt-4 p-4 border-2 rounded-md z-20 overflow-auto absolute top-20 bg-opacity-70 bg-black">
         <div className="flex justify-between">

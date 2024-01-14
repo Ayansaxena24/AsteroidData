@@ -23,6 +23,7 @@ class FormInput extends Component<
       asteroidDetails: null,
       loading: false,
     };
+    console.log("test ", this.props);
   }
 
   fetchData = async (str: String) => {

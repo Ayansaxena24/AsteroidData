@@ -1,7 +1,6 @@
 import { ChangeEvent, FormEvent, Component } from "react";
 import bg from "./assets/bg2.jpg";
 import withRouter from "./withRouter";
-import CircularLoader from "./CircularLoader";
 
 interface FormInputState {
   id: string;
@@ -23,6 +22,7 @@ class FormInput extends Component<
       asteroidDetails: null,
       loading: false,
     };
+    console.log("test ", this.props);
   }
 
   fetchData = async (str: String) => {
@@ -132,7 +132,7 @@ class FormInput extends Component<
               <div>
                 {loading ? (
                   <div className="flex justify-center items-center">
-                    < CircularLoader />
+                    < Circular
                   </div>
                 ) : (
                   <>

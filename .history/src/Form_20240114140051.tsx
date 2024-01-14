@@ -1,7 +1,6 @@
 import { ChangeEvent, FormEvent, Component } from "react";
 import bg from "./assets/bg2.jpg";
 import withRouter from "./withRouter";
-import CircularLoader from "./CircularLoader";
 
 interface FormInputState {
   id: string;
@@ -23,6 +22,7 @@ class FormInput extends Component<
       asteroidDetails: null,
       loading: false,
     };
+    console.log("test ", this.props);
   }
 
   fetchData = async (str: String) => {
@@ -130,39 +130,36 @@ class FormInput extends Component<
                 />
               </div>
               <div>
-                {loading ? (
+                {loading && (
                   <div className="flex justify-center items-center">
-                    < CircularLoader />
+                    <p className="text-xl">Loading...</p>
                   </div>
-                ) : (
-                  <>
-                    <div className="flex justify-center items-center w-full pt-4 z-10">
-                      <button
-                        disabled={id.length === 7 ? false : true}
-                        className={`${
-                          id.length === 7
-                            ? "border-2 border-white rounded-md px-2 duration-300 ease-in-out hover:scale-110"
-                            : "border-2 border-gray-400 rounded-md px-2 cursor-not-allowed text-gray-300"
-                        }`}
-                        type="submit"
-                      >
-                        Submit
-                      </button>
-                    </div>
-                    <div className="w-full pt-4 absolute left-0">
-                      <hr className="w-full " />
-                    </div>
-                    <div className="w-full flex justify-center items-center flex-col space-y-2 pt-6 ">
-                      <p>OR</p>
-                      <button
-                        onClick={this.handleRandomSubmit}
-                        className="border-2 rounded-md px-2 duration-300 hover:scale-110 ease-in-out"
-                      >
-                        Choose a Random Asteroid
-                      </button>
-                    </div>
-                  </>
                 )}
+                <div className="flex justify-center items-center w-full pt-4 z-10">
+                  <button
+                    disabled={id.length === 7 ? false : true}
+                    className={`${
+                      id.length === 7
+                        ? "border-2 border-white rounded-md px-2 duration-300 ease-in-out hover:scale-110"
+                        : "border-2 border-gray-400 rounded-md px-2 cursor-not-allowed text-gray-300"
+                    }`}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>
+                <div className="w-full pt-4 absolute left-0">
+                  <hr className="w-full " />
+                </div>
+                <div className="w-full flex justify-center items-center flex-col space-y-2 pt-6 ">
+                  <p>OR</p>
+                  <button
+                    onClick={this.handleRandomSubmit}
+                    className="border-2 rounded-md px-2 duration-300 hover:scale-110 ease-in-out"
+                  >
+                    Choose a Random Asteroid
+                  </button>
+                </div>
               </div>
             </form>
           </div>
